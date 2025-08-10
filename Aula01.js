@@ -1,3 +1,5 @@
+// DATA: 05/08/2025 - AULA 01
+
 // 01) Imprima a expressão "Olá Mundo!" no console:
 console.log("Olá Mundo!")
 
