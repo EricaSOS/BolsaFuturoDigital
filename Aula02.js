@@ -1,3 +1,4 @@
+// DATA: 09/08/2025 - AULA 02
 // 01) CÁLCULO DE ÁREA DE TRIÂNGULO
 // Declarar variáveis 
 baseTriangulo = 0
