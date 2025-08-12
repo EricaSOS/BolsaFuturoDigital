@@ -16,9 +16,9 @@ quartaNota = prompt("Insira a quarta nota: ")
 quintaNota = prompt("Insira a quinta nota: ")
 
 // Confirmando o tipo da variável
-console.log(typeof(primeiraNota))
+console.log(typeof(primeiraNota)) // String
 
-// Transformar as notas em numeros
+// COnverter as variáveis notas em números
 primeiraNota = parseInt(primeiraNota)
 segundaNota = parseInt(segundaNota)
 terceiraNota = parseInt(terceiraNota)
