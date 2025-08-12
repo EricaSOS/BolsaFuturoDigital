@@ -30,3 +30,21 @@ mediaNotas = (primeiraNota + segundaNota + terceiraNota + quartaNota + quintaNot
 
 // Mostrar o resultado para o usuário no console
 console.log("A média das notas é: " + mediaNotas)
+
+
+// 02) Escreva um script que converta a temperatura de Fahrenheit para Celsius.
+// Declaração de variáveis
+temperaturaFahrenheit = 0
+temperaturaCelsius = 0
+
+// Receber informações do usuário
+temperaturaFahrenheit = prompt("Insira a temperatura em Fahrenheit:")
+
+// Confirmando o tipo da variável
+console.log(typeof(temperaturaFahrenheit))  // Apesar de String, na fórmula ele converte, pois como não há dúvida se é concatenação ou soma...
+
+// Calcular o que se pede
+temperaturaCelsius = (5/9) * (temperaturaFahrenheit - 32)
+
+// Mostrar o resultado para o usuário no console
+console.log("A temperatura em Celsius é: " + temperaturaCelsius + "°C")
