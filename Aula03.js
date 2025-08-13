@@ -8,11 +8,11 @@ quintaNota = 0
 mediaNotas = 0
 
 // Receber informações do usuário
-primeiraNota = prompt("Insira a primeira nota: ")
-segundaNota = prompt("Insira a segunda nota: ")
-terceiraNota = prompt("Insira a terceira nota: ")
-quartaNota = prompt("Insira a quarta nota: ")
-quintaNota = prompt("Insira a quinta nota: ")
+primeiraNota = prompt("Insira a primeira nota:")
+segundaNota = prompt("Insira a segunda nota:")
+terceiraNota = prompt("Insira a terceira nota:")
+quartaNota = prompt("Insira a quarta nota:")
+quintaNota = prompt("Insira a quinta nota:")
 
 // Confirmando o tipo da variável
 console.log(typeof(primeiraNota)) // String
@@ -31,7 +31,7 @@ mediaNotas = (primeiraNota + segundaNota + terceiraNota + quartaNota + quintaNot
 console.log("A média das notas é: " + mediaNotas)
 
 
-// 02) Escreva um script que converta a temperatura de Fahrenheit para Celsius.
+// 02) Escreva um script que converta a temperatura de Fahrenheit para Celsius:
 // Declaração de variáveis
 temperaturaFahrenheit = 0
 temperaturaCelsius = 0
@@ -49,7 +49,7 @@ temperaturaCelsius = (5/9) * (temperaturaFahrenheit - 32)
 console.log("A temperatura em Celsius é: " + temperaturaCelsius + "°C")
 
 
-// 03) Elabore um script que calcule a hipotenusa de um triângulo retângulo (algoritmo de Pitágoras)
+// 03) Elabore um script que calcule a hipotenusa de um triângulo retângulo (algoritmo de Pitágoras):
 // Declaração de variáveis
 cateto01 = 0 // lado 01
 cateto02 = 0 // lado 02
@@ -64,3 +64,20 @@ hipotenusa = ((cateto01 ** 2) + (cateto02 ** 2)) ** 0.5
 
 // Mostrar o resultado para o usuário no console
 console.log("A hipotenusa é: " + hipotenusa)
+
+
+// 04) Elabora um script que calcule o IMC (Índice de Massa Corporal) de uma pessoa:
+// Declaração de variáveis
+peso = 0 // lado 01
+altura = 0 // lado 02
+imc = 0 // Índice de Massa Corporal
+
+// Receber informações do usuário
+peso = prompt("Insira o peso da pessoa (kg):")
+altura = prompt("Insira a altura da pessoa (metro):")
+
+// Calcular o que se pede
+imc = peso /(altura ** 2)
+
+// Mostrar o resultado para o usuário no console
+console.log("O IMC da pessoa é: " + imc)
