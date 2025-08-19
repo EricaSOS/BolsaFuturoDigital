@@ -41,6 +41,7 @@ console.log("O primeiro número passou a ser: " + primeiroNumero)
 console.log("O segundo número passou a ser: " + segundoNumero)
 
 // Professor passou desafio de não usarmos uma terceira variável para fazer a alteração.
+// A solução abaixo só funciona, pois são números, se fossem Strings, não daria certo.
 primeiroNumero = prompt("Digite o primeiro número:")
 segundoNumero = prompt("Digite o segundo número:")
 
