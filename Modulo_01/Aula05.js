@@ -41,3 +41,15 @@ console.log("O primeiro número passou a ser: " + primeiroNumero)
 console.log("O segundo número passou a ser: " + segundoNumero)
 
 // Professor passou desafio de não usarmos uma terceira variável para fazer a alteração.
+primeiroNumero = prompt("Digite o primeiro número:")
+segundoNumero = prompt("Digite o segundo número:")
+
+primeiroNumero = Number(primeiroNumero)
+segundoNumero = Number(segundoNumero)
+
+primeiroNumero = primeiroNumero + segundoNumero 
+segundoNumero = primeiroNumero - segundoNumero
+primeiroNumero = primeiroNumero - segundoNumero
+
+console.log("O primeiro número passou a ser: " + primeiroNumero)
+console.log("O segundo número passou a ser: " + segundoNumero)
