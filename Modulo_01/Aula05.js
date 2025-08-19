@@ -25,3 +25,19 @@ imcFormatado = imc.toFixed(2).replace('.', ',')
 
 // Mostrar o resultado para o usuário no console
 console.log("O IMC da pessoa é: " + imcFormatado)
+
+
+
+// 02) Desenvolva uma solução que receba 02 numeros e imprima os valores trocados.
+// 1ª Tentativa, usando uma terceira variável
+primeiroNumero = prompt("Digite o primeiro número:")
+segundoNumero = prompt("Digite o segundo número:")
+
+variavelauxiliar = primeiroNumero
+primeiroNumero = segundoNumero
+segundoNumero =  variavelauxiliar
+
+console.log("O primeiro número passou a ser: " + primeiroNumero)
+console.log("O segundo número passou a ser: " + segundoNumero)
+
+// Professor passou desafio de não usarmos uma terceira variável para fazer a alteração.
