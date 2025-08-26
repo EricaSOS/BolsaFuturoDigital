@@ -1,4 +1,4 @@
-// 01) Faça um programa que receba a idade e retorne se a pessoa pode tirar CNH.
+// 03) Faça um programa que receba a idade e retorne se a pessoa pode tirar CNH.
 // Declaração de Variáveis
 idadeUsuario = 0
 limiteIdadeMinima = 18
@@ -15,7 +15,7 @@ if(idadeUsuario >= limiteIdadeMinima){
   console.log("Falta" + saldoIdade + " anos para você tirar a sua Habilitação de Morotista")
 }
 
-// 02) Crie um programa que leia um número e retorne se é par ou ímpar:
+// 04) Crie um programa que leia um número e retorne se é par ou ímpar:
 numeroDigitado = 0
 
 //Recebe informações do Usuário
@@ -29,7 +29,7 @@ if(numeroDigitado % 2 === 0){
   console.log("O número " + numeroDigitado + "é Impar.")
 }
 
-// 03) Lei um número de 1 a 12 e mostre o mês correspondente
+// 05) Lei um número de 1 a 12 e mostre o mês correspondente
 numeroDigitado = 0
 
 numeroDigitado = prompt("Informe um número entre 1 e 12:")
