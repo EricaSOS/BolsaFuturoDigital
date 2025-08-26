@@ -15,3 +15,28 @@ if(idadeUsuario >= limiteIdadeMinima){
   console.log("Falta" + saldoIdade + " anos para você tirar a sua Habilitação de Morotista")
 }
 
+// 02) Crie um programa que leia um número e retorne se é par ou ímpar:
+numeroDigitado = 0
+
+//Recebe informações do Usuário
+numeroDigitado = prompt("Digite um número:")
+
+numeroDigitado = Number(numeroDigitado)
+
+if(numeroDigitado % 2 === 0){
+  console.log("O número " + numeroDigitado + "é Par.") 
+} else {
+  console.log("O número " + numeroDigitado + "é Impar.")
+}
+
+// 03) Lei um número de 1 a 12 e mostre o mês correspondente
+numeroDigitado = 0
+
+numeroDigitado = prompt("Informe um número entre 1 e 12:")
+
+numeroDigitado = Number(numeroDigitado)
+
+switch(numeroDigitado){
+  case 1:
+    console.log
+}
