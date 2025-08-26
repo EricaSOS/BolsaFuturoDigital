@@ -1,4 +1,4 @@
-// 09) Faça um script que mostrar a classificação de um filme conforme a faixa etária indicada pelo usuário:
+// 06) Faça um script que mostrar a classificação de um filme conforme a faixa etária indicada pelo usuário:
 
 opcaoUsuario = prompt("Digite a idade a ser consultada:")
 
