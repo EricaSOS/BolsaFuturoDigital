@@ -36,12 +36,19 @@ alturaFormatada = altura.toFixed(2)
 // Calcular o que se pede
 imc = pesoFormatado /(alturaFormatada ** 2)
 
-//Formatação
+//Formatação IMC
 imcFormatado = imc.toFixed(2).replace('.', ',')
-
-// Mostrar o resultado para o usuário no console
 console.log("O IMC da pessoa é: " + imcFormatado)
 
+if (imc < 18.5){
+    console.log("Resultado: Abaixo")
+} else if (imc >= 18.5 && imc <= 24.9){
+    console.log("Resultado: Normal")
+}  else if (imc >= 25 && imc <= 29.9){
+    console.log("Resultado: Sobrepeso")
+} else {
+    console.log("Resultado: Acima")
+}
 
 
 
