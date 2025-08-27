@@ -16,13 +16,37 @@ if (opcaoUsuario < 12){
   console.log("Por gentileza, escolha uma idade")
 }
 
-// 07) 
+// 07) Melhore o script que calcula o IMC, para mostrar a classificação da pessoa:
+
+peso = 0 // lado 01
+altura = 0 // lado 02
+imc = 0 // Índice de Massa Corporal
+
+// Receber informações do usuário
+peso = prompt("Insira o peso da pessoa (kg):").replace(',', '.')
+altura = prompt("Insira a altura da pessoa (metro):").replace(',', '.')
+
+//Formatação
+peso = Number(peso)
+altura = Number(altura)
+
+pesoFormatado = peso.toFixed(2)
+alturaFormatada = altura.toFixed(2)
+
+// Calcular o que se pede
+imc = pesoFormatado /(alturaFormatada ** 2)
+
+//Formatação
+imcFormatado = imc.toFixed(2).replace('.', ',')
+
+// Mostrar o resultado para o usuário no console
+console.log("O IMC da pessoa é: " + imcFormatado)
 
 
 
 
-
-// 08) Faça um script que leia três números e imprima o maior
+// 08) Faça um script que leia três números e imprima o maior:
+// Minha tentativa:
 primeiroNumero = prompt("Digite o primeiro número:")
 segundoNumero = prompt("Digite o segundo número:")
 terceiroNumero = prompt("Digite o terceiro número:")
