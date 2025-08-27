@@ -15,3 +15,32 @@ if (opcaoUsuario < 12){
 } else {
   console.log("Por gentileza, escolha uma idade")
 }
+
+// 07) 
+
+
+
+
+
+// 08) Faça um script que leia três números e imprima o maior
+primeiroNumero = prompt("Digite o primeiro número:")
+segundoNumero = prompt("Digite o segundo número:")
+terceiroNumero = prompt("Digite o terceiro número:")
+
+primeiroNumero = Number(primeiroNumero)
+segundoNumero = Number(segundoNumero)
+terceiroNumero = Number(terceiroNumero)
+
+if (primeiroNumero === segundoNumero && primeiroNumero === terceiroNumero){
+    console.log("Os três números informados são iguais.")
+} else if (primeiroNumero === segundoNumero || primeiroNumero === terceiroNumero || segundoNumero === terceiroNumero){
+    console.log("Você informou pelo menos dois números iguais.")
+}  else if (primeiroNumero > segundoNumero && primeiroNumero > terceiroNumero){
+    console.log("O maior número é: " + primeiroNumero)
+} else if (segundoNumero > primeiroNumero && segundoNumero > terceiroNumero){
+    console.log("O maior número é: " + segundoNumero)
+} else if (terceiroNumero > primeiroNumero && terceiroNumero > segundoNumero){
+    console.log("O maior número é: " + terceiroNumero)
+} else {
+  console.log("Por gentileza, insira três números.")
+}
