@@ -52,4 +52,14 @@ for(contador = 1; contador <= 25; contador+= 2){
   console.log("Número: " + contador)
 }
 
+// 12) Escreva um programa que imprima a tabuada de qualquer número
+
+multiplicando = prompt("Informe o número: ")
+
+for(multiplicador = 1; multiplicador <= 10; multiplicador++){
+  produto = multiplicando * multiplicador
+  console.log(multiplicando + " x " + multiplicador + " = " + produto)
+}
+
+
 
