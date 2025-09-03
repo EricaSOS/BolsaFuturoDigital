@@ -61,5 +61,23 @@ for(multiplicador = 1; multiplicador <= 10; multiplicador++){
   console.log(multiplicando + " x " + multiplicador + " = " + produto)
 }
 
+//13) Escreva um programa que leia um número N até que N seja igual a 0. Ao final, informar a quantidade de pares e ímpares.
 
+numero = prompt("Informe o número: ")
+contadorImpar = 0
+contadorPar = 0
+
+while (numero != 0){
+  if(numero % 2 == 0){
+    contadorPar++
+  }else{
+    contadorImpar++
+  }
+
+  numero = prompt("Informe o número: ")
+
+}
+
+console.log("Quantidade de números ímpares: " + contadorImpar)
+console.log("Quantidade de números pares: " + contadorPar)
 
