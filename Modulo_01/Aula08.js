@@ -1,4 +1,4 @@
-// EXEMPLOS DE ESTRUTURAS DE REPETIÇÃO
+// TEORIA: EXEMPLOS DE ESTRUTURAS DE REPETIÇÃO
 // 1) WHILE
 contador = 1
 while (contador <= 5){
@@ -31,6 +31,7 @@ do{
 for(contador = 1; contador <= 5; contador ++){
   console.log("Número: " + contador)
 }
+// ---------------------------------------
 
 // DESAFIO 01: JOGO DO PIM (SILVIO SANTOS)
 contador = 1
@@ -60,6 +61,8 @@ for(multiplicador = 1; multiplicador <= 10; multiplicador++){
   produto = multiplicando * multiplicador
   console.log(multiplicando + " x " + multiplicador + " = " + produto)
 }
+
+// -------------------------------------------
 
 //13) Escreva um programa que leia um número N até que N seja igual a 0. Ao final, informar a quantidade de pares e ímpares.
 
