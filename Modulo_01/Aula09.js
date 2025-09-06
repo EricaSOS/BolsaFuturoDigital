@@ -21,3 +21,30 @@ console.log("Valor inicial: R$ " + capitalEntrada)
 console.log("Perído da aplicação: " + meses + " meses")
 console.log("Taxa: " + taxa)
 console.log("Valor ao final da aplicação: R$ " + capitalFinal)
+
+
+/* 15) Desenvolver uma solução para simular um caixa de supermercado.
+Ao final, imprimir somente o Total da Compra (soma dos produtos)
+Dicas: 
+- Iremos receber os produtos e seus valores dentro de um laço;
+- Devemos implementar uma solução de saída de laço.
+*/
+console.log("Olá, vamos iniciar o registro dos seus produtos.\n Para finalizar, tecle digite 'SSSS' no campo produto.)")
+nomeProduto = prompt("Informe o produto:")
+
+totalProduto = 0
+contadorProduto = 0
+
+while(nomeProduto != "SSSS"){  
+  valorProduto = prompt("Informe o valor do produto (em reais)").replace(",",".")
+  valorProduto = parseFloat(valorProduto)
+  totalProduto = totalProduto + valorProduto
+  contadorProduto++
+  valorProduto = valorProduto.toFixed(2).replace(".",",")
+  console.log("Produto " + contadorProduto + ": " + nomeProduto +" ........... R$ " + valorProduto)
+  nomeProduto = prompt("Informe o produto:")
+}
+
+totalProduto = totalProduto.toFixed(2).replace(".",",")
+
+console.log("Valor total da compra: R$ " + totalProduto)
