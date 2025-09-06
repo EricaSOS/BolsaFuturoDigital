@@ -29,7 +29,7 @@ Dicas:
 - Iremos receber os produtos e seus valores dentro de um laço;
 - Devemos implementar uma solução de saída de laço.
 */
-console.log("Olá, vamos iniciar o registro dos seus produtos.\n Para finalizar, tecle digite 'SSSS' no campo produto.)")
+console.log("Olá, vamos iniciar o registro dos seus produtos.\n Para finalizar, digite 'SSSS' no campo produto.)")
 nomeProduto = prompt("Informe o produto:")
 
 totalProduto = 0
