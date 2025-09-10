@@ -61,3 +61,22 @@ for(indice=0; indice < fibonacci.length; indice++){
   console.log (fibonacci[indice])
 }
 
+//EXERCÍCIOS DE FIXAÇÃO
+
+// 16) Crie um programa que receba 05 números inteiros (em um array) e calcule a média destes números. Ao final deve mostrar a média.
+
+numerosUsuario = new Array(5)
+somaNumeros = 0
+mediaNumeros = 0
+indice = 0
+
+while(indice < numerosUsuario.length){
+  numeroDigitado = parseInt(prompt("Informe um número inteiro: "))
+  numerosUsuario[indice] = numeroDigitado
+  somaNumeros = somaNumeros + numeroDigitado
+  indice++
+}
+
+mediaNumeros = somaNumeros/numerosUsuario.length
+console.log("Os números informados foram: " + numerosUsuario)
+console.log("A média dos números é: " + mediaNumeros)
