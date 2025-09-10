@@ -68,13 +68,11 @@ for(indice=0; indice < fibonacci.length; indice++){
 numerosUsuario = new Array(5)
 somaNumeros = 0
 mediaNumeros = 0
-indice = 0
 
-while(indice < numerosUsuario.length){
+for(indice = 0; indice < numerosUsuario.length; indice++){
   numeroDigitado = parseInt(prompt("Informe um número inteiro: "))
   numerosUsuario[indice] = numeroDigitado
-  somaNumeros = somaNumeros + numeroDigitado
-  indice++
+  somaNumeros = somaNumeros + numeroDigitado  
 }
 
 mediaNumeros = somaNumeros/numerosUsuario.length
