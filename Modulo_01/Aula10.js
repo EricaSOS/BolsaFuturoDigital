@@ -79,3 +79,36 @@ for(indice = 0; indice < numerosUsuario.length; indice++){
 mediaNumeros = somaNumeros/numerosUsuario.length
 console.log("Os números informados foram: " + numerosUsuario)
 console.log("A média dos números é: " + mediaNumeros)
+
+
+// 17) Crie um programa que receba N números inteiros (o usuário deve informar), armazene num array e, ao final, mostre o maior e o menor dos números.
+
+quantidadeNumeros = parseInt(prompt("Quantos números deseja informar?"))
+numerosUsuario = new Array(quantidadeNumeros)
+somaNumeros = 0
+mediaNumeros = 0
+maiorNumero = 0
+menorNumero = 0
+
+for(indice = 0; indice < numerosUsuario.length; indice++){
+  numeroDigitado = parseInt(prompt("Informe um número inteiro: "))
+  numerosUsuario[indice] = numeroDigitado
+
+  if (indice == 0) {
+    maiorNumero = numeroDigitado
+    menorNumero = numeroDigitado
+  } else {
+    
+    if(numeroDigitado > maiorNumero){
+        maiorNumero = numeroDigitado
+      } 
+    if (numeroDigitado < menorNumero) {
+        menorNumero = numeroDigitado
+    }
+  }
+   
+}
+
+console.log("O maior número é: " + maiorNumero)
+console.log("O menor número é: " + menorNumero)
+
