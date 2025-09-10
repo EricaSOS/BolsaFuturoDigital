@@ -65,7 +65,8 @@ for(indice=0; indice < fibonacci.length; indice++){
 
 // 16) Crie um programa que receba 05 números inteiros (em um array) e calcule a média destes números. Ao final deve mostrar a média.
 
-numerosUsuario = new Array(5)
+quantidadeNumeros = parseInt(prompt("Quantos números deseja informar?"))
+numerosUsuario = new Array(quantidadeNumeros)
 somaNumeros = 0
 mediaNumeros = 0
 
