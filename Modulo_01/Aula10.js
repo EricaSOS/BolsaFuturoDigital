@@ -112,3 +112,4 @@ for(indice = 0; indice < numerosUsuario.length; indice++){
 console.log("O maior número é: " + maiorNumero)
 console.log("O menor número é: " + menorNumero)
 
+// 18) Criar um programa que receba N numeros (o usuário deve informar), calcule a média destes números e imprima a média e QUAIS dos números informador é maior ou igual ao valor da media (somente os maiores)
