@@ -17,18 +17,21 @@ for(itemCompra = 1; nomeProduto != "SSSS"; itemCompra++){
   quantidadeItens = Number(prompt("Quantidade de produtos: "))
   valorItem = parseFloat(prompt("Valor do produto (R$)")).replace(",",".")
   valorTotalItem = quantidadeItens * valorItem
-  valorTotalCompra = valorTotalCompra + valorTotalItem  
+  valorTotalCompra = valorTotalCompra + valorTotalItem
+
   descricaoProduto.push(itemCompra, nomeProduto, quantidadeItens, valorItem, valorTotalItem)
   nomeProduto = prompt("Informe o produto:")  
 }
-  
-  
-  
 
-
-totalProduto = totalProduto.toFixed(2).replace(".",",")
-
+//Impressão do Cupom Fiscal
 console.log("CUPOM DA VENDA \n --------------------------------------")
 console.log("ITEM       DESCRIÇÃO            QTD   VALOR      TOTAL")
+console.log("---------------------------------------")
+for(elemento in descricaoProduto){
+  console.log(descricaoProduto[elemento])
+}
+console.log("---------------------------------------")
+valorTotalCompra = totalProduto.toFixed(2).replace(".",",")
+console.log("TOTAL R$                          VALOR" + valorTotalCompra)
 console.log("---------------------------------------")
 
