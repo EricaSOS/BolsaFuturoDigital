@@ -113,3 +113,36 @@ console.log("O maior número é: " + maiorNumero)
 console.log("O menor número é: " + menorNumero)
 
 // 18) Criar um programa que receba N numeros (o usuário deve informar), calcule a média destes números e imprima a média e QUAIS dos números informador é maior ou igual ao valor da media (somente os maiores)
+quantidadeNumeros = parseInt(prompt("Quantos números deseja informar?"))
+numerosUsuario = new Array(quantidadeNumeros)
+somaNumeros = 0
+mediaNumeros = 0
+maiorNumero = 0
+iguaisMedia = new Array()
+menorMedia = new Array()
+maiorMedia = new Array()
+
+for(indice = 0; indice < numerosUsuario.length; indice++){
+  numeroDigitado = parseInt(prompt("Informe um número inteiro: "))
+  numerosUsuario[indice] = numeroDigitado
+  somaNumeros = somaNumeros + numeroDigitado   
+}
+
+mediaNumeros = somaNumeros/quantidadeNumeros
+
+for (elementoNumero in numerosUsuario) {
+    maiorNumero = parseInt(numerosUsuario[elementoNumero])
+    if(maiorNumero === mediaNumeros){
+       iguaisMedia.push(maiorNumero)
+    } else if(maiorNumero > mediaNumeros){
+       maiorMedia.push(maiorNumero)
+    } else {
+       menorMedia.push(maiorNumero)
+    }
+}
+
+console.log("Os números digitados foram: " + numerosUsuario)
+console.log("A média desses números é: " + mediaNumeros)
+console.log("Os números iguais a média são: " + iguaisMedia)
+console.log("Os números maiores do que a média são: " + maiorMedia)
+console.log("Os números menores do que a média são: " + menorMedia)
