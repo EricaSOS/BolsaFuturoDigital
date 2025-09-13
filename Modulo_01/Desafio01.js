@@ -11,6 +11,7 @@ valorTotalItem = 0
 valorTotalCompra = 0
 itemCupom = 1
 
+// Adicionando produtos no Array descricaoProduto
 nomeProduto = prompt("Para finalizar, digite '0' (zero) no produto.\n \n Informe o produto:")
 
 for(itemCompra = 0; nomeProduto != 0; itemCompra++){
