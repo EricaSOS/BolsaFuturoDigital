@@ -9,29 +9,32 @@ quantidadeItens = 0
 valorItem = 0
 valorTotalItem = 0
 valorTotalCompra = 0
+itemCupom = 1
 
-console.log("Olá, vamos iniciar o registro dos seus produtos.\n Para finalizar, digite 'SSSS' no campo produto.)")
-nomeProduto = prompt("Informe o produto:")
+nomeProduto = prompt("Olá, vamos iniciar o registro dos seus produtos.\n Para finalizar, deixe o campo nome do produto vazio.) \n Informe o produto:")
 
-for(itemCompra = 1; nomeProduto != "SSSS"; itemCompra++){
-  quantidadeItens = Number(prompt("Quantidade de produtos: "))
-  valorItem = parseFloat(prompt("Valor do produto (R$)")).replace(",",".")
-  valorTotalItem = quantidadeItens * valorItem
-  valorTotalCompra = valorTotalCompra + valorTotalItem
+for(itemCompra = 0; nomeProduto != 0; itemCompra++){
+    quantidadeItens = Number(prompt("Quantidade de produtos: "))
+    valorItem = prompt("Valor do produto (R$)").replace(",",".")
+    valorItem = parseFloat(valorItem)
+    valorTotalItem = quantidadeItens * valorItem
+    valorTotalCompra = valorTotalCompra + valorTotalItem
 
-  descricaoProduto.push(itemCompra, nomeProduto, quantidadeItens, valorItem, valorTotalItem)
-  nomeProduto = prompt("Informe o produto:")  
+    valorItem = valorItem.toFixed(2).replace(".",",")
+    valorTotalItem = valorTotalItem.toFixed(2).replace(".",",")
+    descricaoProduto.push(nomeProduto, quantidadeItens, valorItem, valorTotalItem)
+    nomeProduto = prompt("Informe o produto:")  
 }
 
 //Impressão do Cupom Fiscal
-console.log("CUPOM DA VENDA \n --------------------------------------")
+console.log("              CUPOM DA VENDA              ")
+console.log("---------------------------------------------------------")
 console.log("ITEM       DESCRIÇÃO            QTD   VALOR      TOTAL")
-console.log("---------------------------------------")
-for(elemento in descricaoProduto){
-  console.log(descricaoProduto[elemento])
+console.log("---------------------------------------------------------")
+for(itemCompra = 0; itemCompra < descricaoProduto.length-1; itemCompra+=4){    
+    console.log(itemCupom + "          " + descricaoProduto[itemCompra] + "                 " + descricaoProduto[itemCompra+1] + "     " + descricaoProduto[itemCompra+2] + "     "+ descricaoProduto[itemCompra+3]) 
+    itemCupom++ 
 }
-console.log("---------------------------------------")
-valorTotalCompra = totalProduto.toFixed(2).replace(".",",")
-console.log("TOTAL R$                          VALOR" + valorTotalCompra)
-console.log("---------------------------------------")
-
+console.log("---------------------------------------------------------")
+valorTotalCompra = valorTotalCompra.toFixed(2).replace(".",",")
+console.log("TOTAL R$                                          " + valorTotalCompra)
