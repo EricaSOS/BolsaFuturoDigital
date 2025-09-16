@@ -49,3 +49,27 @@ if(idade >= 16){
 }
 
 console.log (resultado)
+
+
+// Quebra-cabeça para análise
+function exemploEscopoBloco(){
+  var x = 1
+  let y = 2
+  const z = 3
+
+  if (true){
+    var x = 10
+    let y = 20
+    const z = 30
+
+    console.log(x) // 10
+    console.log(y) // 20
+    console.log(z) // 30
+  }
+  
+  console.log(x) // 10
+  console.log(y) // 2
+  console.log(z) // 3
+}
+
+exemploEscopoBloco();
