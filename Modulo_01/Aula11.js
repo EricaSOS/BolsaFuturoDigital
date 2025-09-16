@@ -21,3 +21,22 @@ resultado = somar2(10,7)
 console.log("O resultado da soma2 é: " + resultado)
 resultado = dobro(6)
 console.log("O resultado do dobro é: " + resultado)
+
+// Variável Global
+var globalVar = "Eu sou global" // Variável com escopo Global
+
+function minhaFuncao(){
+  console.log(globalVar) // acessível aqui
+}
+
+minhaFuncao()
+console.log(globalVar) // acessível aqui também
+
+// Variável Local
+function outraFuncao(){
+  var localVar = "Eu sou local" //escopo de função
+  console.log(localVar) // acessível aqui
+}
+
+outraFuncao()
+console.log(localVar) // ReferenceError: localVar is not defined
