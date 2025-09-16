@@ -40,3 +40,12 @@ function outraFuncao(){
 
 outraFuncao()
 console.log(localVar) // ReferenceError: localVar is not defined
+
+//Não vale o escopo para condicionais e repetições, sendo a variável global.
+var idade = 18
+
+if(idade >= 16){
+  var resultado = "Pode votar"
+}
+
+console.log (resultado)
