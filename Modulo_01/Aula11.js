@@ -98,3 +98,16 @@ function calcularRaizes(a, b, delta){
 }
 
 console.log(raizes);
+
+
+// 02) Converter a temperatura de °C para F
+
+const temperaturaCelsius = Number(prompt("Digite a temperatura em °C:"))
+
+temperaturaFahrenheit = conversorFahrenheit(temperaturaCelsius)
+
+function conversorFahrenheit(temperatura){
+  return (temperatura*1.8) + 32
+}
+
+console.log(temperaturaFahrenheit)
