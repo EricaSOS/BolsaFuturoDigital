@@ -73,3 +73,29 @@ function exemploEscopoBloco(){
 }
 
 exemploEscopoBloco();
+
+//EXERCÍCIOS
+
+// 01) Leia três valores a, b e c, insira na fórmula de função do segundo grau, para mostrar as raízes.
+
+const a = Number(prompt("Digite o valor de 'a':"))
+const b = Number(prompt("Digite o valor de 'b':"))
+const c = Number(prompt("Digite o valor de 'c':"))
+
+const delta = calcularDelta(a, b, c);
+
+function calcularDelta(a, b, c){
+  const deltaCalculado = (b**2) - (4 * a * c)
+  return deltaCalculado
+}
+console.log(delta) //somente para testar se estava retornando valor correto
+
+const raizes = calcularRaizes(a, b, delta)
+
+function calcularRaizes(a, b, delta){
+  const raiz1 = ((-b) + (delta**0.5))/ (2 * a)
+  const raiz2 = ((-b) - (delta**0.5))/ (2 * a)
+  return [raiz1, raiz2]
+}
+
+console.log(raizes);
