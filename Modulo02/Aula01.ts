@@ -39,10 +39,17 @@ console.log(pagamento)
 const pessoa: [string, number] = ["Érica", 37] // isso é uma tupla
 
 // EXEMPLO 06
+/* 
+enum Papel{
+    Administrador = "admin",
+    Usuario = "usr"
+}
+*/
 type Usuario = {
     nome: string,
     login: string,
     senha: string
+   // papel?: Papel
 }
 
 const digaOla = (usr: Usuario): void => {
@@ -52,7 +59,11 @@ const digaOla = (usr: Usuario): void => {
 const usuarioLogado: Usuario = {
     nome:"Erica",
     login: "devIniciante",
-    senha: "456#"
+    senha: "456#"   
+    // papel: Papel.Usuario  
 }
 
 digaOla(usuarioLogado)
+// console.log (usuarioLogado)
+
+// EXEMPLO 07
