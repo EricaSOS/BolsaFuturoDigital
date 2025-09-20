@@ -34,3 +34,25 @@ enum TiposDePagamento{
 
 const pagamento: TiposDePagamento = TiposDePagamento.pix
 console.log(pagamento)
+
+// EXEMPLO 05
+const pessoa: [string, number] = ["Érica", 37] // isso é uma tupla
+
+// EXEMPLO 06
+type Usuario = {
+    nome: string,
+    login: string,
+    senha: string
+}
+
+const digaOla = (usr: Usuario): void => {
+    console.log("Olá " + usr.nome + "!")
+}
+
+const usuarioLogado: Usuario = {
+    nome:"Erica",
+    login: "devIniciante",
+    senha: "456#"
+}
+
+digaOla(usuarioLogado)
