@@ -23,3 +23,14 @@ function mostrarDados(): void{
 }
 
 mostrarDados()
+
+// EXEMPLO 04
+
+enum TiposDePagamento{
+    credito = "cartao_credito",
+    debito = "cartao_debito",
+    pix = "transf_pix"
+}
+
+const pagamento: TiposDePagamento = TiposDePagamento.pix
+console.log(pagamento)
