@@ -67,3 +67,45 @@ digaOla(usuarioLogado)
 // console.log (usuarioLogado)
 
 // EXEMPLO 07
+
+type Usuario = {
+    nome: string,
+    login: string,
+    senha: string
+}
+
+const digaOla = (usr: Usuario): void => {
+    console.log("Olá " + usr.nome + "!")
+}
+
+const usuarioLogado: Usuario = {
+    nome:"Erica",
+    login: "devIniciante",
+    senha: "456#"   
+}
+
+// Duas formas de implementar uma lista de usuários:
+
+/* 1ª forma: literal
+const usuariosCadastrados: Array<Usuario> = [
+    {
+    nome:"Fabio",
+    login: "fmarques",
+    senha: "@456#"   
+    },
+    {
+    nome:"Frederich Di Pietro",
+    login: "fPietro",
+    senha: "@8523#"   
+    }
+]
+*/
+
+// 2ª Forma
+const usuariosCadastrados: Array<Usuario> = []
+usuariosCadastrados.push({nome:"Fabio", login: "fmarques", senha: "@456#"})
+usuariosCadastrados.push({nome:"Frederich Di Pietro", login: "fPietro", senha: "@8523#"})
+
+digaOla(usuarioLogado)
+console.log (usuarioLogado)
+console.log(usuariosCadastrados)
