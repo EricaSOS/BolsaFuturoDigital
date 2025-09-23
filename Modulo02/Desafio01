@@ -1,1 +1,23 @@
+// Com base nos conhecimentos já adquiridos, reescreva o desafio do caixa de supermercado em TS.
+
+type Produto = {
+    descricaoProduto: string,
+    quantidadeProduto: number,
+    valorUnidade: number,
+    produtoSubTotal: number
+}
+
+const carrinho: Array<Produto> = []
+
+let itemCupom: number
+
+const itensCarrinho = (itemCarrinho: Produto): void => {
+    itemCarrinho.descricaoProduto = String(prompt("Para finalizar, deixe o Produto vazio.\n PRODUTO:"))
+    
+    for(itemCupom = 0; itemCarrinho.descricaoProduto != null; itemCupom++){
+        let quantidadeItem: number = Number(prompt("Quantidade de produtos: "))
+        let valorItem: number = Number(prompt("Valor do produto (R$)"))
+        let subtotalItem: number = quantidadeItem * valorItem
+        let valorTotalCompra: number
+        valorTotalCompra = valorTotalCompra + subtotalItem
 
