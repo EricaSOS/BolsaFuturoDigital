@@ -35,7 +35,8 @@ const itensCarrinho = (itemCarrinho: Produto): void => {
         
 }
 
-const imprimirCupomFiscal = (carrinho: Array<Produto>) => {
+function imprimirCupomFiscal (): void {
+    itensCarrinho()
     console.log("              CUPOM DA VENDA              ")
     console.log("---------------------------------------------------------")
     console.log("ITEM       DESCRIÇÃO\nQTD   VALOR      TOTAL")
