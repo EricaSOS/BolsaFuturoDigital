@@ -10,42 +10,45 @@ type Produto = {
 const carrinho: Array<Produto> = []
 
 let itemCupom: number
-let valorTotalCompra: number
+let valorTotalCompra: number = 0
 
-const itensCarrinho = (itemCarrinho: Produto): void => {
-    itemCarrinho.descricaoProduto = String(prompt("Para finalizar, deixe o Produto vazio.\n PRODUTO:"))
+function itensCarrinho (): void {
+    let descricaoProduto: string = String(prompt("Para finalizar, deixe o Produto em branco.\n PRODUTO:"))
     
-    for(itemCupom = 0; itemCarrinho.descricaoProduto != null; itemCupom++){
-        itemCarrinho.quantidadeProduto = Number(prompt("Quantidade de produtos: "))
-        itemCarrinho.valorUnidade = Number(prompt("Valor do produto (R$)"))
-        itemCarrinho.produtoSubTotal = itemCarrinho.quantidadeProduto * itemCarrinho.valorUnidade
-        valorTotalCompra = valorTotalCompra + itemCarrinho.quantidadeProduto
+    while(descricaoProduto != ""){
+        let quantidadeProduto: number = Number(prompt("Quantidade de produtos: "))
+        let valorUnidade: number = Number(prompt("Valor do produto (R$)"))
+        let produtoSubTotal: number = quantidadeProduto * valorUnidade
+        valorTotalCompra = valorTotalCompra + produtoSubTotal
 
         carrinho.push(
             {
-                descricaoProduto: itemCarrinho.descricaoProduto,
-                quantidadeProduto: itemCarrinho.quantidadeProduto,
-                valorUnidade: itemCarrinho.valorUnidade,
-                produtoSubTotal: itemCarrinho.produtoSubTotal
+                descricaoProduto: descricaoProduto,
+                quantidadeProduto: quantidadeProduto,
+                valorUnidade: valorUnidade,
+                produtoSubTotal: produtoSubTotal
             }
         )
 
-        itemCarrinho.descricaoProduto = String(prompt("Informe o produto:"))  
+        descricaoProduto = String(prompt("Informe o produto:"))  
     }
-        
 }
 
-function imprimirCupomFiscal (): void {
+function imprimirCupomFiscal(): void {
     itensCarrinho()
     console.log("              CUPOM DA VENDA              ")
-    console.log("---------------------------------------------------------")
+    console.log("---------------------------------------------------")
     console.log("ITEM       DESCRIÇÃO\nQTD   VALOR      TOTAL")
-    console.log("---------------------------------------------------------")
-    for(itemCupom = 0; itemCupom < carrinho.length-1; itemCupom+=4){    
-        console.log((itemCupom++) + "          " + carrinho[itemCupom])
-        console.log(carrinho[itemCupom+1] + "       " + carrinho[itemCupom+2] + "       "+ carrinho[itemCupom+3]) 
-        itemCupom++ 
+    console.log("---------------------------------------------------")
+    for(itemCupom = 0; itemCupom <= carrinho.length-1; itemCupom++){  
+        let produto: Produto = carrinho[itemCupom]
+        console.log((++itemCupom) + "          " + produto.descricaoProduto)
+        console.log(produto.valorUnidade + "       " + produto.quantidadeProduto + "       "+ produto.produtoSubTotal) 
     }
     console.log("---------------------------------------------------------")
     console.log("TOTAL R$                " + valorTotalCompra.toFixed(2).replace(".",","))
 }
+
+itensCarrinho()
+imprimirCupomFiscal()
+
