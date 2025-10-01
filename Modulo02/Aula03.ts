@@ -96,3 +96,45 @@ for(let contador = 11; contador <= 20; contador++) {
     cachorro.emitirSom()
 }
 
+// EXEMPLO DE INTERFACE E IMPLEMENTAÇÃO:
+
+interface Carro{
+    partes: Array<string>
+    montar(): void
+}
+
+class CarroModeloA implements Carro{
+    partes: Array<string> = ["motor 1.0","cambio_manual"]
+
+    montar(): void {
+        console.log(this.partes.join(".")) // vai separar os elemntos do array, juntar e separando por pontos
+    }
+}
+
+const carroA: CarroModeloA = new CarroModeloA()
+
+carroA.montar() // "motor 1.0.cambio_manual"
+
+const carroX: Carro = new CarroModeloA() // posso utilizar a própria interface carro
+
+carroX.montar() // "motor 1.0.cambio_manual"
+
+
+console.log("----------------------------------------------------")
+class CarroModeloB implements Carro {
+    partes: Array<string> = ["motor 2.0","cambio_automático"]
+
+    montar(): void {
+        console.log(this.partes.join(";")) // vai separar os elemntos do array, juntar e separando por ";"
+    }
+}
+
+const carroD: CarroModeloA = new CarroModeloA()
+const carroC: CarroModeloB = new CarroModeloB()
+
+function montarCarros(carros: Array<Carro>){
+    carros.forEach((carro) => carro.montar())
+}
+
+montarCarros([carroD, carroC])
+
