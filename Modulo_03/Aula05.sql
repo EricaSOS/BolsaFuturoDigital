@@ -32,3 +32,20 @@ SELECT C.COD_CLI, C.NOME_CLI, C.UF, PRO.DESC_PROD, PED.NUM_PED
         AND UPPER(PRO.DESC_PROD = 'CHAPA DE ACO 2.5')
         AND PED.PRAZO_ENTR > 15
     ORDER BY C.NOME_CLI;
+
+-- EXEMPLO DE CONSULTAS ANINHADAS (SUB QUERIES)
+SELECT DESC_PROD
+    FROM PRODUTO
+    WHERE COD_PROD IN (
+                        SELECT CD_PROD
+                            FROM ITEM_PEDIDO
+                            WHERE QTD_PED = 100
+                      );
+                      
+-- EXERCÍCIO 08: Quais vendedores ganham um salário fixo abaixo da média
+SELECT COD_VEND, NOME_VEND
+    FROM VENDEDOR
+    WHERE SAL_FIXO < (
+                        SELECT AVG(SAL_FIXO)
+                            FROM VENDEDOR
+                      );
