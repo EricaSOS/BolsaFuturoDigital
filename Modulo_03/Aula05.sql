@@ -20,3 +20,15 @@ SELECT DISTINCT V.NOME_VEND, P.PRAZO_ENTR
         AND V.SAL_FIXO > 1000
         AND P.PRAZO_ENTR > 15
     ORDER BY V.NOME_VEND;
+
+-- EXERCÍCIO 07: Exiba a relação dos clientes localizados no RJ (ordenados alfabeticamente) que têm pedidos do 
+-- produto Chapa de Aço 2.5, com prazos de entrega superiores a 15 dias. Ao final exiba um resultado que traga informação do nome e do pedido.
+SELECT C.COD_CLI, C.NOME_CLI, C.UF, PRO.DESC_PROD, PED.NUM_PED
+    FROM CLIENTE C, PEDIDO PED, PRODUTO PRO, ITEM_PEDIDO I
+    WHERE C.COD_CLI = PED.CD_CLI       
+        AND PED.NUM_PED = I.NO_PED
+        AND PRO.COD_PROD = I.CD_PROD
+        AND UPPER(C.UF) LIKE 'RJ'
+        AND UPPER(PRO.DESC_PROD = 'CHAPA DE ACO 2.5')
+        AND PED.PRAZO_ENTR > 15
+    ORDER BY C.NOME_CLI;
