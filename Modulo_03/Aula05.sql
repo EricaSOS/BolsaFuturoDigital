@@ -49,3 +49,22 @@ SELECT COD_VEND, NOME_VEND
                         SELECT AVG(SAL_FIXO)
                             FROM VENDEDOR
                       );
+
+-- EXEMPLO DE INSERÇÃO: 
+INSERT INTO VENDEDOR 
+    (COD_VEND, NOME_VEND, SAL_FIXO, FAIXA_COMISS) -- nome das colunas, se coloco todas as colunas
+    VALUES (15, 'MARIA PAULA', 900.00, 'C'); -- valores
+
+INSERT INTO VENDEDOR 
+    (SAL_FIXO, FAIXA_COMISS) -- NOME_VEND é obrigatório, sem ele, dá erro na inserção 
+    VALUES (1000.00, 'A');
+    
+-- EXEMPLO INSERÇÃO DE VALORES PROVENIENTES DE OUTRA TABELA
+INSERT INTO CLIENTE (COD_CLI, NOME_CLI, ENDERECO, CIDADE, CEP, UF)
+    SELECT COD_VEND, NOME_VEND
+    FROM VENDEDOR V
+    WHERE 3 < (
+                SELECT COUNT (*)
+                    FROM PEDIDO P, VENDEDOR V
+                    WHERE V.COD_VEND = P.CD_VEND
+               ); 
