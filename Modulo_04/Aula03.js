@@ -18,3 +18,18 @@ server.listen(3000, '127.0.0.1', () => {
 });
 
 //run with 'node serverFS.js' digitar no terminal e depois acessar pelo navegador http://127.0.0.1:3000/
+
+
+//index.html
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olá, este é o meu site pessoal!</title>
+</head>
+<body>
+    <h1>Bem vindo ao meu site pessoal</h1>
+</body>
+</html>
