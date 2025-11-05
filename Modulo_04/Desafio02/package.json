@@ -1,0 +1,14 @@
+{
+  "name": "desafio02",
+  "version": "1.0.0",
+  "description": "Hospedar o desafio 02 de node do BFD.",
+  "main": "app2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ericasos",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
