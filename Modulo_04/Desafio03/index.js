@@ -25,18 +25,33 @@ app.get('/pedidos', (req, res) => {
     const htmlBase = fs.readFileSync('./views/views.html') //Lê o html
     const cheerioLoad = cheerio.load(htmlBase) // carrega no cheerio o html
     const tabelaCorpo = cheerioLoad('#tabela-corpo') //pega apenas a parte da tabela-corpo
-    //const tabelaRodape = cheerioLoad('#tabela-rodape') //pega apenas a parte da tabela-rodape
+    const tabelaRodape = cheerioLoad('#tabela-rodape') //pega apenas a parte da tabela-rodape
+        
+        let contadorPedidos = 0
+
+        tabelaCorpo.empty()
 
         rows.forEach(pedido => {
+            contadorPedidos +=1
+
             tabelaCorpo.append(`                
             <tr>
-            <th>${pedido.NUM_PED}</th>
+            <th><a href="/pedido/${pedido.NUM_PED}">${pedido.NUM_PED}</a></th>
             <td>${pedido.PRAZO_ENTR}</td>
             <td>${pedido.CD_CLI}</td>
             <td>${pedido.CD_VEND}</td>
             </tr>`)            
         })
-  
+        
+        tabelaRodape.empty() // não preciso deletar no html os dados, basta incluir o empty
+
+        tabelaRodape.append(`
+            <tr>
+                <th scope= "row" colspan= "3">Pedidos</th>
+                <td>${contadorPedidos}</td>
+            </tr>
+            `)
+
 
         res.send(cheerioLoad.html())
         })
@@ -44,7 +59,7 @@ app.get('/pedidos', (req, res) => {
 
 app.get('/pedido/:id', (req, res, next) => {
     //Buscar esse pedido no banco
-    const sql = `SELECT PED.NUM_PED, PROD.COD_PROD, PROD.DESC_PROD, PROD.UNID_PROD, IPED.QTD_PED, PROD.VAL_UNIT, (IPED.QTD_PED * PROD.VAL_UNIT) AS 'VAL_TOTAL'
+    const sql = `SELECT PROD.COD_PROD, PROD.DESC_PROD, PROD.UNID_PROD, IPED.QTD_PED, PROD.VAL_UNIT, (IPED.QTD_PED * PROD.VAL_UNIT) AS 'VAL_TOTAL'
                     FROM ITEM_PEDIDO IPED, PEDIDO PED, PRODUTO PROD
                         WHERE IPED.NO_PED = PED.NUM_PED
                             AND IPED.CD_PROD = PROD.COD_PROD
@@ -64,9 +79,10 @@ app.get('/pedido/:id', (req, res, next) => {
     const totalPedido = cheerioLoad('#total-pedido')
     // Preencher os valores
     
+    numeroPedido.empty() // não preciso deletar no html os dados, basta incluir o empty
     
     numeroPedido.append(`
-        <h2 class="text-center mb-4">ITENS DO PEDIDO Nº ${itemPedido.NUM_PED}</h2>
+        <h2 class="text-center mb-4">ITENS DO PEDIDO Nº ${req.params.id}</h2>
         `)
         
     let somaFinal = 0
@@ -86,16 +102,18 @@ app.get('/pedido/:id', (req, res, next) => {
                 `)
         })
 
+        totalPedido.empty() // não preciso deletar no html os dados, basta incluir o empty
+
         totalPedido.append(`
-            <div class="col-2 text-right">R$ ${somaFinal.toFixed(2).replace(".", ",")}</div>
+            <div class="col-2 text-right">R$${somaFinal.toFixed(2).replace(".", ",")}</div>
             `)
 
-   
     
     //Enviar o HTML
     res.send(cheerioLoad.html())
     })
 })
+
 
 app.listen(port, () => {
     console.log(`Servidor ouvindo a porta ${port}!`)
