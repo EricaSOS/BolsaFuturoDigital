@@ -40,6 +40,13 @@ app.get('/pedidos', (req, res) => {
             <td>${pedido.PRAZO_ENTR}</td>
             <td>${pedido.CD_CLI}</td>
             <td>${pedido.CD_VEND}</td>
+
+            <td>
+                <form id="deleteForm">
+                    <input type="hidden" name="codigo" value="${pedido.NUM_PED}">
+                    <button type="submit">Remover</button>
+                </form>
+            </td>
             </tr>`)            
         })
         
@@ -105,7 +112,7 @@ app.get('/pedido/:id', (req, res, next) => {
         totalPedido.empty() // não preciso deletar no html os dados, basta incluir o empty
 
         totalPedido.append(`
-            <div class="col-2 text-right">R$${somaFinal.toFixed(2).replace(".", ",")}</div>
+            <div class="col-2 text-right">R$ ${somaFinal.toFixed(2).replace(".", ",")}</div>
             `)
 
     
@@ -113,6 +120,36 @@ app.get('/pedido/:id', (req, res, next) => {
     res.send(cheerioLoad.html())
     })
 })
+
+app.delete('/pedido/:id', (req, res, next) => {
+    //Deletar item do pedido e o pedido
+    //Deletar item do pedido
+    const sql = `DELETE FROM ITEM_PEDIDO WHERE NO_PED = ?`
+    //Deletar pedido
+    const sql2 = `DELETE FROM PEDIDO WHERE NUM_PED = ?`
+
+    db.run(sql, [req.params.id], (err,rows) => {
+        if (err) {
+            res.status(500).json({error: err.message})
+            return
+        }     
+
+    res.status(200)
+    res.send()
+    })
+
+    //Deletar pedido
+    db.run(sql2, [req.params.id], (err,rows) => {
+        if (err) {
+            res.status(500).json({error: err.message})
+            return
+        }     
+
+    res.status(200)
+    res.send()
+    })
+})
+
 
 
 app.listen(port, () => {
