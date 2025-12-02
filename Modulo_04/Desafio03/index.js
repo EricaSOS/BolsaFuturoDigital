@@ -7,6 +7,11 @@ const port = 3000
 const sqlite3 = require(`sqlite3`)
 const cheerio = require(`cheerio`)
 
+//preparando para inserção de dados
+const bodyParser = require(`body-parser`)
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded())
+
 //Faz a conexão com o banco de dados
 const db = new sqlite3.Database('./bd.sqlite', (err) => {
     if (err) {console.error(err.message)}
@@ -150,7 +155,27 @@ app.delete('/pedido/:id', (req, res, next) => {
     })
 })
 
+// rota post de inserção de pedido
+app.post('/pedido', (req, res, next) => {
+    const numPed = req.body.num_ped
+    const prazoEntrega = req.body.prazo_entr
+    const codCli = req.body.cd_cli
+    const codVend = req.body.cd_vend
 
+    // Inserir pedido no banco
+    const sql = `INSERT INTO PEDIDO (NUM_PED, PRAZO_ENTR, CD_CLI, CD_VEND)
+                    VALUES (?, ?, ?, ?)`
+
+    db.run(sql, [numPed,prazoEntrega,codCli,codVend], (err,rows) => {
+        if (err) {
+            res.status(500).json({error: err.message})
+            return
+        }    
+
+        res.status(200)
+        res.send("<h1> Pedido inserido!</h1><p><a href='/pedidos'>Listar Pedidos</a></p>")
+    })
+})
 
 app.listen(port, () => {
     console.log(`Servidor ouvindo a porta ${port}!`)
