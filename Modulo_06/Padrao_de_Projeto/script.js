@@ -48,12 +48,22 @@ class Kit extends ItemCarrinho {
   }  
 }
 
+// Formatar para moeda nacional
+
+function formatarMoeda(valor) {
+  return "R$ " + valor.toFixed(2).replace(".", ",");
+}
+
+
 // Cadastro de itens para compor o Catálogo
 const catalogo = [];
 
 const creme = new ProdutoSimples("Creme para mãos", 20);
 const perfume = new ProdutoSimples("Perfume", 80);
 const hidratante = new ProdutoSimples("Hidratante", 25);
+const cremeDental = new ProdutoSimples ("Creme Dental", 2);
+const escovaDentes = new ProdutoSimples ("Escova de dentes", 5);
+const fioDental = new ProdutoSimples("Fio Dental", 4);
 
 const kitAutocuidado = new Kit("Kit Autocuidado", [
   hidratante,
@@ -61,7 +71,14 @@ const kitAutocuidado = new Kit("Kit Autocuidado", [
   creme
 ]);
 
-catalogo.push(creme, perfume, kitAutocuidado);
+const kitViagem = new Kit("Kit Viagem", [
+  cremeDental,
+  escovaDentes,
+  fioDental,
+  kitAutocuidado
+]);
+
+catalogo.push(creme, perfume, hidratante, cremeDental, escovaDentes, fioDental, kitAutocuidado, kitViagem);
 
 // Carrinho
 const carrinho = [];
@@ -77,10 +94,10 @@ function atualizarCatalogo() {
   catalogo.forEach((item) => {
     const li = document.createElement("li");
 
-    let texto = `${item.getNome()} - R$ ${item.getPreco()}`;
+    let texto = `${item.getNome()} - ${formatarMoeda(item.getPreco())}`;
 
     if (item instanceof Kit) {
-      texto = `${item.getNome()} (Contém: ${item.getDescricao()}) - R$ ${item.getPreco()}`;
+      texto = `${item.getNome()} (Contém: ${item.getDescricao()}) - ${formatarMoeda(item.getPreco())}`;
     }
 
     li.textContent = texto;
@@ -110,7 +127,8 @@ function atualizarCarrinho() {
 
   carrinho.forEach((item, index) => {
     const li = document.createElement("li"); // <li>
-    li.textContent = `${item.getNome()} - R$ ${item.getPreco()}`;
+    li.textContent = `${item.getNome()} - ${formatarMoeda(item.getPreco())}`;
+
 
     const botao = document.createElement("button");
     botao.textContent = "Remover";
@@ -128,7 +146,8 @@ function atualizarTotal() {
     (soma, item) => soma + item.getPreco(),
     0
   );
-  totalSpan.textContent = total;
+  totalSpan.textContent = formatarMoeda(total);
+
 }
 
 // Inicializa
